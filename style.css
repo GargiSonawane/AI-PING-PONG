@@ -11,6 +11,28 @@
     float: right;
     border: 1px solid white;
 }
-.big_image{
+
+.copyright_footer{
+    position: fixed;
+    color: grey;
+    bottom: 0;
     width: 100%;
+    background-color: honeydew;
+    line-height: 3px;
+    text-align: center;
+}
+
+h4{
+    background-color: wheat;
+    line-height: 2;
+    margin: 0px;
+}
+
+.modal-dialog{
+    width: 90%;
+}
+
+.instruction_image{
+    display: inline-block;
+    width: 45%;
 }
