@@ -1,5 +1,8 @@
 
 /*created by prashant shukla */
+var rightWristX = "";
+var rightWristy = "";
+var rightWristScore = ""; 
 
 var paddle2 =10,paddle1=10;
 
@@ -32,9 +35,19 @@ function setup(){
   poseNet.on('pose', gotPoses);
 }
 
-modelLoaded(){
-  console.log("model loaded!");
+function modelLoaded(){
+  console.log("model loaded");
 }
+
+function gotPoses(){
+  if(results.length > 0)
+	{
+	  console.log(results);
+	  rightWristX = results[0].pose.rigthWrist.x;
+	  rightWristy = results[0].pose.rightWrist.y;
+	}
+}
+
 
 function draw(){
 
@@ -76,6 +89,12 @@ function draw(){
    
    //function move call which in very important
     move();
+
+    if (rightWristScore > 0.2){
+      fill("#fc0317");
+      stroke("#fc0317");
+      circle(rightWristX, rightWristy, 20);
+    }
 }
 
 
