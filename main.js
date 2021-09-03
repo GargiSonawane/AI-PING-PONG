@@ -25,6 +25,7 @@ var ball = {
 }
 
 function setup(){
+  var game_status = "";
   var canvas =  createCanvas(700,600);
   canvas.parent("canvas");
   video=createCapture(VIDEO);
@@ -48,6 +49,10 @@ function gotPoses(){
 	}
 }
 
+function startGame(){
+game_status = "start";
+document.getElementById("status").innerHTML = "game is loading";
+}
 
 function draw(){
 
@@ -94,6 +99,10 @@ function draw(){
       fill("#fc0317");
       stroke("#fc0317");
       circle(rightWristX, rightWristy, 20);
+
+    }
+    if (game_status == "start"){
+        
     }
 }
 
